@@ -1,46 +1,44 @@
-# Getting Started with Create React App
+# Liven - Projeto de avaliação técnica Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Enunciado
 
-## Available Scripts
+Desenvolver um loja simples em React (pode ser Next.js) ou React Native utilizando **Typescript**, com um catálogo de produtos e um carrinho de compras. O usuário deve poder adicionar/remover produtos do catálogo no carrinho de compras.
 
-In the project directory, you can run:
+## Especificações
 
-### `npm start`
+### Tela de produtos 🎁
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Será responsável por apresentar todos os produtos disponíveis para o usuário em uma lista. Será necessário que você estabeleça comunicação com o back-end, para obter informações relativas a cada uma dos produtos.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<aside>
+🛰️ **Documentação da API:** Para este projeto, vamos utilizar o Fake Store API. A documentação está presente em [https://fakestoreapi.com/docs#products](https://fakestoreapi.com/docs#products)
 
-### `npm test`
+</aside>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Tela do carrinho de compras 🛒
 
-### `npm run build`
+Responsável por guardar os itens e quantidades adicionadas pelo usuário. É desejável que o usuário possa aumentar ou diminuir a quantidade de um produto do carrinho, além de remover por completo.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Testes automatizados ✅
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Criação de suite de testes automatizados para o repositório.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Sobre a entrega
 
-### `npm run eject`
+1. **Estimativa de tempo para entrega**: O primeiro ponto de entrega deste projeto é o próprio tempo de estimativa para a entrega final do projeto.
+2. **Cópia do repositório**: O repositório será entregue para avaliação da estrutura do projeto. Por isso, quaisquer pontos de documentação/comentários em código são bem vindos.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Dicas sobre a nossa avaliação
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Este projeto tem como objetivo nos permitir avaliar a sua capacidade técnica atual no uso algumas das diversas ferramentas de desenvolvimento que utilizamos no dia-a-dia. Sendo assim, nossa avaliação **não se limitará ao “funciona” vs “não funciona”.** Isso é positivo pois permite que você nos mostre tudo o que sabe no que diz respeito às boas práticas de desenvolvimento, além da implementação de um app que que “apenas funciona”. Alguns pontos que podemos julgar relevantes:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- **Organização do repositório GIT**. O uso do GIT é muito importante no dia-a-dia de desenvolvimento colaborativo, então a divisão dos commits, por exemplo, é algo que será avaliado
+- **Arquitetura escolhida**. As decisões tomadas em relação à organização da aplicação, principalmente no que diz respeito ao gerenciamento de estado da mesma, serão avaliadas pensando em manutenibilidade, performance, etc...
+- **Código limpo**. Todas as boas práticas que estão contidas aqui serão valorizadas (nomes de variáveis, tamanho das funções / classes, testes automatizados, etc...)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<aside>
+⛔ Lembrando que o projeto tem como objetivo avaliar a **sua** capacidade técnica atual. Desta forma, é importante que você realize a implementação do projeto por conta própria, sem o uso de templates prontos da internet. (Não tem problema utilizar igniters como **create-next-app** ou **create-react-app**)
 
-## Learn More
+</aside>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Boa sorte! 🍀**
