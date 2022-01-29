@@ -7,6 +7,7 @@ interface IProductCard {
     description: string;
     price: number;
     image: string;
+    amount: number;
 }
 
 export const ProductCard = ({ title, category, description, price, image }: IProductCard) => {

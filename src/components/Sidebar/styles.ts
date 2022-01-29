@@ -15,6 +15,7 @@ export const Container = styled.aside<IMenu>`
     top: 0;
     transition: 0.5s ease-in-out;
     left: ${({ isOpen }) => (isOpen ? '0' : '-1420px')};
+    
     @media screen and (max-width: 400px) {
         width: 100%;
     }

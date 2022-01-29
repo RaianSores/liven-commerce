@@ -6,6 +6,7 @@ export const Container = styled.div`
   -webkit-box-align: center;
   position: relative;
   flex-direction: column;
+  
 `;
 
 export const Header = styled.div`
@@ -17,8 +18,15 @@ export const Header = styled.div`
 `;
 
 const iconCSS = css`
-  width: 40px;
-  height: 40px;
+  position: fixed;
+  width: 2rem;
+  height: 2rem;
+  z-index: 100;
+  right: 2rem;
+  top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   color: var(--grey-trash-icon);
   cursor: pointer;
 `;
