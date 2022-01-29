@@ -1,7 +1,6 @@
 import React from 'react';
 import { Nav, NavIcon } from "./styles";
 
-
 interface NavbarProps {
     toggle: () => void;
 }

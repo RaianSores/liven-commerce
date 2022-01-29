@@ -13,7 +13,6 @@ export const GlobalStyle = createGlobalStyle`
     --text-grey: #42464D;
     --text-grey-mid: #565C69;
     --text-grey-weak: #7F858D;
-    --filter-text: #3F3B3B;
     --white: #FFFFFF;
     --white-weak: #F5F5F5;
     --blue: #0060b1;

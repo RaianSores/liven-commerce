@@ -2,17 +2,16 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   min-height: 5vh;
-  padding: 1rem calc((85vw - 1300px) / 10);
-  background: var(--black-color);
-  color: var(--grey-line);
+  padding: 0.5rem calc((80vw - 1024px) / 10);
+  background: var(--background-principal);
   border-radius: 5px;
-  grid-row-end: 1;
 `;
 
-export const ProductCard = styled.div`
-    margin: flex;
-    line-height: 2;
-    width: 350px;
+export const Context = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
 `;
 
 export const Wrapper = styled.div`
@@ -23,70 +22,88 @@ export const Wrapper = styled.div`
 `;
 
 export const Header = styled.h1`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    text-align: center;
-    margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--black-color);
 `;
 
 export const Description = styled.h2`
-    font-weight: 700;
-    font-size: 14px;
-    color: var(--red);
+  display: flex;
+  font-weight: 700;
+  font-size: 14px;
+  color: red;
 `;
 
-export const Image = styled.img`
-    height: 20rem;
-    min-width: 15rem;
-    max-width: 10%;
-    box-shadow: 8px 8px var(--gold-dark);
+export const Row = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 16px 1rem;
 `;
 
-export const Info = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    text-align: center;
+export const Photograph = styled.img`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 15rem;
+  min-width: 15rem;
+  max-width: 10%;
+
+  @media screen and (max-width: 750px) {
+    height: 60%;
+    min-width: 60%;
+    //max-width: 10%;
+  }
 `;
 
 export const Category = styled.p`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1rem;
-    margin-bottom: 2rem;
-    font-size: 1.5rem;
-    padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  padding: 1rem;
 `;
 
 export const Price = styled.p`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1rem;
-    margin-bottom: 2rem;
-    font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
 `;
 
 export const Button = styled.button`
-    font-size: 1rem;
-    padding: 1rem 4rem;
-    border: none;
-    background: var(--red);
-    color: #fff;
-    border-radius: 5px;
-    transition: 0.2 ease-out;
-    &:hover {
-        background: var(--gold-dark);
-        transition: 0.2s ease-out;
-        cursor: pointer;
-        color: var(--black-color);
-    }
+position: absolute
+  font-size: 1rem;
+  padding: 1rem 1rem;
+  border: none;
+  background: var(--blue);
+  color: var(--black-color);
+  border-radius: 1rem;
+  transition: 0.2 ease-out;
+  &:hover {
+    background: var(--gold-dark);
+    transition: 0.2s ease-out;
+    cursor: pointer;
+    color: var(--black-color);
+  }
+  @media screen and (max-width: 750px) {
+    font-size: 0.8rem;
+    padding: 0.5rem 3rem;
+  }
+
+  @media screen and (max-width: 650px) {
+    font-size: 0.3rem;
+    padding: 0.5rem 1rem;
+  }
 `;
