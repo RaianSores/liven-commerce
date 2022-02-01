@@ -1,49 +1,42 @@
-import React, { useEffect, useState } from 'react';
-
-import { ProductCard } from './ProductCard';
-import { Button, Container } from './styles';
+import { useCallback, useEffect, useState } from 'react';
 
 import { api } from '../../services/api';
-interface IProduct {
-    id: string;
-    title: string;
-    category: string;
-    description: string;
-    price: number;
-    image: string;
-    amount: number;
-}
+import { IProduct } from '../../types/types';
+import { ProductCart } from './ProductCart';
+//import { Button } from '../Button/index'
 
+import { Container, Button } from './styles';
 
-export const Product: React.FC = () => {
+export const Product = () => {
     const [products, setProducts] = useState<IProduct[]>([]);
     const [allProducts, setAllProducts] = useState<IProduct[]>([]);
     const [page, setPage] = useState(0);
     const [productsPerPage] = useState(6);
 
     //Requisição API Fake 
+    const loadProducts: any = async () => {
+        try {
+            const { data } = await api.get<IProduct[]>('products');
+            return data
+        } catch (error) {
+            console.log(error + "Alguma coisa deu ruim...");
+        }
+    };
+
+    //Lidando com os itens que vão renderizar
+    const handleLoadProducts = useCallback(async (page: number, productsPerPage: number) => {
+        const productsData = await loadProducts();
+
+        setProducts(productsData.slice(page, productsPerPage));
+        setAllProducts(productsData)
+    }, []);
+
     useEffect(() => {
-        const loadProducts = async (page: any, productsPerPage: any) => {
-/*            try {
-                const response = await axios.get<IProduct[]>('https://fakestoreapi.com/products');
-                setProducts(response.data.slice(page, productsPerPage));
-                setAllProducts(response.data)
-                console.log(response.data)
-            } catch (error) {
-                console.log(error + "Alguma coisa deu ruim...");
-            }
-        };
-        
-*/    
-        const { data } = await api.get('products');
-        console.log(data)
-        setProducts(data.slice(page, productsPerPage));
-        setAllProducts(data)
-    }
-        loadProducts(0, productsPerPage);
-    }, [products, productsPerPage]);
-    
-    if(!products.length) return <h1>Loading...</h1>
+        handleLoadProducts(0, productsPerPage);
+    }, [handleLoadProducts, productsPerPage]);
+
+    //Caso a requisção ainda não tenha sico completada retorna loading...
+    if (!products.length) return <h1>Loading...</h1>
 
     const loadMoreProducts = () => {
         const nextPage = page + productsPerPage;
@@ -54,13 +47,13 @@ export const Product: React.FC = () => {
         setPage(nextPage);
     };
 
+    //Busca mais produtos para renderizar na página
     const noMoreProducts = page + productsPerPage >= allProducts.length;
 
-    
     return (
         <Container>
             {products.map((product) => (
-                <ProductCard
+                <ProductCart
                     key={product.id}
                     title={product.title}
                     id={product.id}
@@ -71,6 +64,7 @@ export const Product: React.FC = () => {
                     amount={product.amount}
                 />
             ))}
+
             <div>
                 <Button onClick={loadMoreProducts} disabled={noMoreProducts} />
             </div>

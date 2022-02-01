@@ -1,16 +1,16 @@
-import { Button, Category, Container, Context, Description, Header, Photograph, Price, Wrapper, Row } from './styles';
+import useCart from '../../../hooks/useCart';
 
-interface IProductCard {
-    id: string;
-    title: string;
-    category: string;
-    description: string;
-    price: number;
-    image: string;
-    amount: number;
-}
+import { IProduct } from '../../../types/types';
 
-export const ProductCard = ({ title, category, description, price, image }: IProductCard) => {
+import { Category, Container, Context, Description, Header, Photograph, Price, Wrapper, Row, Button } from './styles';
+
+export const ProductCart = ({ title, category, description, price, image, id }: IProduct) => {
+    const { addProduct } = useCart();
+
+    function handleAddProduct(id: number) {
+        addProduct(id)
+    }
+
     return (
         <Container>
             <Context>
@@ -25,8 +25,9 @@ export const ProductCard = ({ title, category, description, price, image }: IPro
                         style: 'currency',
                         currency: 'BRL'
                     }).format(price)}</Price>
-                    <Button>Adicionar ao carrinho</Button>
-                    <Button>Remover do carrinho</Button>
+                    <Row>
+                        <Button onClick={() => handleAddProduct(id)} />
+                    </Row>
                 </Wrapper>
             </Context>
         </Container>

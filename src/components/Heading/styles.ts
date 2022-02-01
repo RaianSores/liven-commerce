@@ -2,27 +2,24 @@ import styled, { css } from "styled-components";
 import { FiShoppingCart } from "react-icons/fi";
 
 export const Container = styled.div`
-  display: flex;
-  -webkit-box-align: center;
-  position: relative;
-  flex-direction: column;
-  
-`;
-
-export const Header = styled.div`
-  position: relative;
-  z-index: 9999;
-  width: 100%;
-  padding: 1rem 2rem;
   background: var(--black-color);
 `;
 
+export const Content = styled.div`
+  max-width: 1820px;
+  margin: 0 auto;
+  background: var(--black-color);
+  padding: 2rem 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
 const iconCSS = css`
-  position: fixed;
+  position: absolute;
   width: 2rem;
   height: 2rem;
-  z-index: 100;
-  right: 2rem;
+  right: 4rem;
   top: 2rem;
   display: flex;
   flex-direction: column;
@@ -31,6 +28,6 @@ const iconCSS = css`
   cursor: pointer;
 `;
 
-export const CartIcon =styled(FiShoppingCart)`
+export const CartIcon = styled(FiShoppingCart)`
   ${iconCSS}
-`
+`;

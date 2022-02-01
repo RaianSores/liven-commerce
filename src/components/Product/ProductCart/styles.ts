@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { BsFillCartPlusFill } from "react-icons/bs";
 
 export const Container = styled.div`
   min-height: 5vh;
@@ -57,7 +58,6 @@ export const Photograph = styled.img`
   @media screen and (max-width: 750px) {
     height: 60%;
     min-width: 60%;
-    //max-width: 10%;
   }
 `;
 
@@ -82,28 +82,23 @@ export const Price = styled.p`
   font-size: 1.5rem;
 `;
 
-export const Button = styled.button`
-position: absolute
-  font-size: 1rem;
-  padding: 1rem 1rem;
-  border: none;
-  background: var(--blue);
-  color: var(--black-color);
-  border-radius: 1rem;
-  transition: 0.2 ease-out;
+export const iconCSS = css`
+  position: absolute;
+  width: 1.5rem;
+  height: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: var(--text-grey-mid);
+  cursor: pointer;
+
   &:hover {
-    background: var(--gold-dark);
     transition: 0.2s ease-out;
     cursor: pointer;
     color: var(--black-color);
   }
-  @media screen and (max-width: 750px) {
-    font-size: 0.8rem;
-    padding: 0.5rem 3rem;
-  }
+`;
 
-  @media screen and (max-width: 650px) {
-    font-size: 0.3rem;
-    padding: 0.5rem 1rem;
-  }
+export const Button = styled(BsFillCartPlusFill)`
+  ${iconCSS}
 `;

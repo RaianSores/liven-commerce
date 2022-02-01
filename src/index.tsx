@@ -1,19 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { GlobalStyle } from './styles/global';
-
-import { Heading } from './components/Heading';
-import { Home } from './templates/Home';
-
+import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { Footer } from './components/Footer';
 
 ReactDOM.render(
   <React.StrictMode>
-    <GlobalStyle />
-    <Heading />
-    <Home />
-    <Footer />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
