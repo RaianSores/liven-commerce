@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { CartItem } from '../../templates/Cart';
 import { Navbar } from '../Navbar';
 import { Sidebar } from '../Sidebar';
-import { CartIcon, Container, Content } from './styles';
+import { CartIcon, Container, Content, HomeIcon } from './styles';
 
 export const Heading: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,6 +14,9 @@ export const Heading: React.FC = () => {
   return (
     <Container>
       <Content>
+        <Link to="/">
+          <HomeIcon />
+        </Link>
         <Navbar toggle={toggle} />
         <Sidebar isOpen={isOpen} toggle={toggle} />
         <Link to="/cart">

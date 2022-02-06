@@ -1,25 +1,18 @@
 import styled from "styled-components";
-import { darken, lighten } from 'polished';
 
-export const Container = styled.div`
-  min-height: 100%;
-  background: var(--background-principal);
-  border-radius: 5px;
-`;
-
-/*
 export const Container = styled.div`
   padding: 30px;
-  background: #fff;
+  background: var(--white-weak);
   border-radius: 4px;
   footer {
     margin-top: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /*
     button {
-      background: #7159c1;
-      color: #fff;
+      background: var(--text-grey-mid);
+      color: var(--white);
       border: 0;
       border-radius: 4px;
       padding: 12px 20px;
@@ -27,43 +20,40 @@ export const Container = styled.div`
       text-transform: uppercase;
       transition: background 0.2s;
       &:hover {
-        background: ${darken(0.06, '#7159c1')};
-      }
+        background: var(--text-grey-weak);
+      }*/
     }
   }
 `;
-*/
-export const ProductTable = styled.table`
-  width: 100%;
-  thead th {
-    color: #999;
+
+export const Thead = styled.thead`
+  th {
+    color: var(--text-grey);
     text-align: left;
     padding: 12px;
   }
+`;
+
+export const ProductTable = styled.table`
+  width: 100%;
   tbody td {
     padding: 12px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--grey-line);
   }
   img {
     height: 100px;
   }
   strong {
-    color: #333;
+    color: var(--text-grey);
     display: block;
-  }
-  span {
-    display: block;
-    margin-top: 5px;
-    font-size: 18px;
-    font-weight: bold;
   }
   div {
     display: flex;
     align-items: center;
     input {
-      border: 1px solid #ddd;
+      border: 1px solid var(--grey-line);
       border-radius: 4px;
-      color: #666;
+      color: var(--text-grey);
       padding: 6px;
       width: 50px;
     }
@@ -73,19 +63,14 @@ export const ProductTable = styled.table`
     border: 0;
     padding: 6px;
     svg {
-      color: #7159c1;
+      color: var(--text-grey-mid);
       transition: color 0.2s;
     }
     &:hover {
       svg {
-        color: ${darken(0.06, '#7159c1')};
+        color: var(--grey-trash-icon)};
       }
     }
-    &:disabled {
-      svg {
-        color: ${lighten(0.25, '#7159c1')};
-        cursor: not-allowed;
-      }
     }
   }
 `;
@@ -94,7 +79,7 @@ export const Total = styled.div`
   display: flex;
   align-items: baseline;
   span {
-    color: #999;
+    color: var(--text-grey);
     font-weight: bold;
   }
   strong {

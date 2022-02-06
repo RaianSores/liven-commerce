@@ -45,6 +45,8 @@ export const Row = styled.div`
   justify-content: flex-start;
   align-items: center;
   padding: 16px 1rem;
+  //flex-direction: column;
+  justify-content: space-between;
 `;
 
 export const Photograph = styled.img`

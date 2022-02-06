@@ -29,13 +29,11 @@ export function CartProvider({ children }: ICartProviderProps) {
         if (storagedCart) {
             return JSON.parse(storagedCart);
         }
-
         return [];
     });
 
      //Adcionar produto no carrinho
     const addProduct = async (productId: number) => {
- 
         try {
             const productAlreadyExists = cart.find(
                 product => product.id === productId

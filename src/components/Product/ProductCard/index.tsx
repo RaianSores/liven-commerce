@@ -1,14 +1,16 @@
 import useCart from '../../../hooks/useCart';
 
 import { IProduct } from '../../../types/types';
+import { formatPrice } from '../../../utils/format';
 
 import { Category, Container, Context, Description, Header, Photograph, Price, Wrapper, Row, Button } from './styles';
 
-export const ProductCart = ({ title, category, description, price, image, id }: IProduct) => {
+export const ProductCard = ({ title, category, description, price, image, id }: IProduct) => {
     const { addProduct } = useCart();
 
-    function handleAddProduct(id: number) {
-        addProduct(id)
+    //Chamando a função de adição compartilhada no hook useCart
+    const handleAddProduct = (id: number) => {
+        return addProduct(id)
     }
 
     return (
@@ -21,10 +23,7 @@ export const ProductCart = ({ title, category, description, price, image, id }: 
                     <Photograph src={image} alt={title} />
                     <Description>{description}</Description>
                     <Category>{category}</Category>
-                    <Price>{new Intl.NumberFormat('pt-BR', {
-                        style: 'currency',
-                        currency: 'BRL'
-                    }).format(price)}</Price>
+                    <Price>{formatPrice(price)}</Price>
                     <Row>
                         <Button onClick={() => handleAddProduct(id)} />
                     </Row>

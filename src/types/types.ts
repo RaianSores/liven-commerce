@@ -8,8 +8,23 @@ export interface IProduct {
   amount: number;
 }
 
+export interface ISidebar {
+  isOpen: boolean;
+  toggle: () => void;
+}
+
 export interface IButton {
-  disabled: boolean;
+  disabled?: boolean;
   text: string;
-  onClick: () => void;
+  onClick?: () => void;
+}
+
+type LoadingType = "balls";
+
+type ColorType = "black";
+export interface ILoading {
+  color?: ColorType;
+  height?: any;
+  width?: any;
+  type?: LoadingType;
 }

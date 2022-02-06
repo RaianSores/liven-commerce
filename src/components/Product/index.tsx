@@ -2,10 +2,11 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { api } from '../../services/api';
 import { IProduct } from '../../types/types';
-import { ProductCart } from './ProductCart';
-//import { Button } from '../Button/index'
+import { Loading } from '../Loading';
+import { ProductCard } from './ProductCard';
+import { Button } from '../Button/index'
 
-import { Container, Button } from './styles';
+import { Container } from './styles';
 
 export const Product = () => {
     const [products, setProducts] = useState<IProduct[]>([]);
@@ -35,9 +36,10 @@ export const Product = () => {
         handleLoadProducts(0, productsPerPage);
     }, [handleLoadProducts, productsPerPage]);
 
-    //Caso a requisção ainda não tenha sico completada retorna loading...
-    if (!products.length) return <h1>Loading...</h1>
+    //Loanding caso a requisção ainda não tenha sido completada retorna loading...
+    if (!products.length) return <Loading />
 
+    //Função de paginação
     const loadMoreProducts = () => {
         const nextPage = page + productsPerPage;
         const nextProduct = allProducts.slice(nextPage, nextPage + productsPerPage);
@@ -47,13 +49,13 @@ export const Product = () => {
         setPage(nextPage);
     };
 
-    //Busca mais produtos para renderizar na página
+    //Verificador de itens para renderizar
     const noMoreProducts = page + productsPerPage >= allProducts.length;
 
     return (
-        <Container>
+        <Container>          
             {products.map((product) => (
-                <ProductCart
+                <ProductCard
                     key={product.id}
                     title={product.title}
                     id={product.id}
@@ -63,10 +65,9 @@ export const Product = () => {
                     image={product.image}
                     amount={product.amount}
                 />
-            ))}
-
+                ))}
             <div>
-                <Button onClick={loadMoreProducts} disabled={noMoreProducts} />
+                <Button text="Load more products" onClick={loadMoreProducts} disabled={noMoreProducts} />
             </div>
         </Container>
     );

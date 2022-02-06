@@ -11,7 +11,13 @@ const iconCSS = css`
   flex-direction: column;
   justify-content: space-between;
   color: var(--grey-trash-icon);
+  transition: 0.2s ease-in-out;
   cursor: pointer;
+
+  &:hover {
+    color: var(--text-grey-mid);
+    transition: 0.2s ease-in-out;
+  }
 `;
 
 export const NavIcon = styled(FiMenu)`
