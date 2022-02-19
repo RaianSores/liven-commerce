@@ -1,4 +1,3 @@
-# Liven - Projeto de avaliação técnica Frontend
 ### Tela do carrinho de compras 🛒
 
 Responsável por guardar os itens e quantidades adicionadas pelo usuário. É desejável que o usuário possa aumentar ou diminuir a quantidade de um produto do carrinho, além de remover por completo.
