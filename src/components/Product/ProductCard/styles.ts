@@ -56,6 +56,7 @@ export const Photograph = styled.img`
   height: 15rem;
   min-width: 15rem;
   max-width: 10%;
+  cursor: pointer;
 
   @media screen and (max-width: 750px) {
     height: 60%;

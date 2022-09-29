@@ -4,25 +4,12 @@ export const Container = styled.div`
   padding: 30px;
   background: var(--white-weak);
   border-radius: 4px;
+
   footer {
     margin-top: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /*
-    button {
-      background: var(--text-grey-mid);
-      color: var(--white);
-      border: 0;
-      border-radius: 4px;
-      padding: 12px 20px;
-      font-weight: bold;
-      text-transform: uppercase;
-      transition: background 0.2s;
-      &:hover {
-        background: var(--text-grey-weak);
-      }*/
-    }
   }
 `;
 
@@ -71,8 +58,6 @@ export const ProductTable = styled.table`
         color: var(--grey-trash-icon)};
       }
     }
-    }
-  }
 `;
 
 export const Total = styled.div`

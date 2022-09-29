@@ -9,6 +9,7 @@ export const GlobalStyles = createGlobalStyle`
         Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     }
     :root {
+    --red: #ff0000;    
     --background-principal: #F2F3F4;
     --text-grey: #42464D;
     --text-grey-mid: #565C69;
@@ -19,6 +20,7 @@ export const GlobalStyles = createGlobalStyle`
     --grey-trash-icon: #B6BBC2;
     --grey-line: #DEE0E4;
     --black-color: #202124;
+    --green: #85FF7A;
     }
     @media (max-width: 1080px) {
         html {

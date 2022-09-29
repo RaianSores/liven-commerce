@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import useCart from '../../../hooks/useCart';
 
 import { IProduct } from '../../../types/types';
@@ -20,7 +21,13 @@ export const ProductCard = ({ title, category, description, price, image, id }: 
                     <Row>
                         <Header>{title}</Header>
                     </Row>
-                    <Photograph src={image} alt={title} />
+                    <Link to="/cardItems">
+                        <Photograph 
+                            src={image} 
+                            alt={title}
+                            onClick={() => handleAddProduct(id)} 
+                        />
+                    </Link>
                     <Description>{description}</Description>
                     <Category>{category}</Category>
                     <Price>{formatPrice(price)}</Price>
