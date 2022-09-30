@@ -7,11 +7,15 @@ import { formatPrice } from '../../../utils/format';
 import { Category, Container, Context, Description, Header, Photograph, Price, Wrapper, Row, Button } from './styles';
 
 export const ProductCard = ({ title, category, description, price, image, id }: IProduct) => {
-    const { addProduct } = useCart();
+    const { addProduct, removeProduct } = useCart();
 
     //Chamando a função de adição compartilhada no hook useCart
     const handleAddProduct = (id: number) => {
         return addProduct(id)
+    }
+
+    const handleremoveProduct =(id: number) => {
+        return removeProduct(id)
     }
 
     return (
@@ -21,7 +25,7 @@ export const ProductCard = ({ title, category, description, price, image, id }: 
                     <Row>
                         <Header>{title}</Header>
                     </Row>
-                    <Link to="/cardItems">
+                    <Link to="/cardItems" >
                         <Photograph 
                             src={image} 
                             alt={title}

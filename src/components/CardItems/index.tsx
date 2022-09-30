@@ -9,7 +9,6 @@ import { IProduct } from '../../types/types';
 import { formatPrice } from '../../utils/format'
 
 import {
-  Benefits,
   CheckIcon,
   Container,
   HeartIcon,

@@ -44,6 +44,14 @@ export const Row = styled.div`
     font-size: 26px;
     font-weight: 600;
   }
+
+  > p {
+      margin-left: 1px;
+      color: var(--text-grey);
+      font-size: 15px;
+      font-family: 400;
+  }
+
   @media screen and (max-width: 750px) {
     padding-left: 2rem;
   }
@@ -93,6 +101,8 @@ export const InstallmentsInfo = styled.div`
   font-size: 15px;
   color: var(--white);
   font-weight: 800;
+  margin-top: 2px;
+  margin-left: 12px;
 `;
 
 export const StockStatus = styled.div`
@@ -123,7 +133,7 @@ export const MethodCard = styled.div`
 export const CheckIcon = styled(HiOutlineCheck)`
   width: 20px;
   height: 20px;
-  color: var(--white);
+  color: var(--text-grey);
   flex-shrink: 0;
 `;
 
@@ -150,7 +160,7 @@ export const Benefits = styled.div`
 export const ShieldIcon = styled(HiOutlineShieldCheck)`
   width: 20px;
   height: 20px;
-  color: var(--white);
+  color: var(--text-grey);
   flex-shrink: 0;
 `;
 
